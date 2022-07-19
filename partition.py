@@ -37,4 +37,4 @@ def exportResult(result, filename):
 
 
 num = inputNum()
-exportResult(calcPartition(num), "bunkatsu.txt")
+exportResult(calcPartition(num), "partition.txt")
