@@ -32,7 +32,7 @@ def inputNum(mes="InputNum > "):
 def exportResult(result, filename):
     with open(filename, "w", encoding="UTF-8") as f:
         for i in range(len(result)):
-            mes = "p(" + str(i) + ") = " + str(result[i]) + "\n"
+            mes = f"p({i}) = {result[i]}\n"
             f.write(mes)
 
 
