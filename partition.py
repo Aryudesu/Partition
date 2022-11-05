@@ -36,5 +36,5 @@ def exportResult(result, filename):
             f.write(mes)
 
 
-num = inputNum()
-exportResult(calcPartition(num), "partition.txt")
+# num = inputNum()
+# exportResult(calcPartition(num), "partition.txt")
