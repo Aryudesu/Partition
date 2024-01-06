@@ -1,15 +1,14 @@
 def partition(num, mem):
     result = 0
     for i in range(1, num + 1):
-        gokaku = [i * (3 * i - 1) // 2, i * (3 * i + 1) // 2]
-        if num < gokaku[0] and num < gokaku[1]:
+        gokaku1, gokaku2 = [i * (3 * i - 1) // 2, i * (3 * i + 1) // 2]
+        if num < gokaku1 and num < gokaku2:
             break
-        for g in gokaku:
-            if num >= g:
-                if i % 2:
-                    result += mem[num - g]
-                else:
-                    result -= mem[num - g]
+        if num >= gokaku1:
+            result += mem[num - gokaku1] if i % 2 else -mem[num - gokaku1]
+
+        if num >= gokaku2:
+            result += mem[num - gokaku2] if i % 2 else -mem[num - gokaku2]
     return result
 
 
@@ -36,5 +35,5 @@ def exportResult(result, filename):
             f.write(mes)
 
 
-# num = inputNum()
-# exportResult(calcPartition(num), "partition.txt")
+num = inputNum()
+exportResult(calcPartition(num), "partition.txt")
